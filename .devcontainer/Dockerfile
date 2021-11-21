@@ -6,3 +6,6 @@ FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 # [Optional] Uncomment this section to install additional packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+# 20.04 LTS换源
+RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list &&\
+    apt update 
