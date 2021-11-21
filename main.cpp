@@ -1,16 +1,18 @@
-#include <iostream>
-#include <string>
+#include "Gun.h"
+#include "Solider.h"
 
 using namespace std;
 
+void test(){
+    Solider sandu("xusandu");
+    sandu.addGun(new Gun("AK47"));
+    sandu.addBulletToGun(20);
+    sandu.fire();
+}
+
 int main()
 {
-    cout << "Hello World\n";
-    cout << "Input: ";
-
-    string data;
-
-    getline(cin, data);
-    cout << "Output: " << data << "\n\n";
+    std::cout<<"first !!"<<std::endl;
+    test();
     return 0;
 }

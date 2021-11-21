@@ -1,14 +1,35 @@
 {
     "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}/build"
+    },
     "tasks": [
         {
-            "label": "Build Main",
             "type": "shell",
-            "command": "g++ -g main.cpp -o main.out",
+            "label": "cmake",
+            "command": "cmake",
+            "args": [
+                ".."
+            ]
+        },
+        {
+            "type": "shell",
+            "label": "make",
             "group": {
                 "kind": "build",
                 "isDefault": true
-            }
+            },
+            "command": "make",
+            "args": []
+        },
+        {
+            "type": "shell",
+            "label": "Build Main",
+            "dependsOn": [
+                "cmake",
+                "make"
+            ],
+            "dependsOrder": "sequence"
         }
     ]
 }
